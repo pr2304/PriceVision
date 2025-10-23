@@ -117,8 +117,8 @@ if submitted:
         with st.spinner('Calculating the estimated price...'):
             base_price = np.expm1(pipeline.predict(input_df))[0]
             # Define a range for the price estimate
-            low = base_price * 0.90
-            high = base_price * 1.10
+            low = base_price - 0.24
+            high = base_price + 0.24
 
         # Display result
         st.markdown("### 💵 Estimated Price Range")
@@ -133,5 +133,6 @@ if submitted:
             """,
             height=0
         )
+
 
 
